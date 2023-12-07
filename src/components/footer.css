@@ -1,0 +1,126 @@
+footer h1 {
+  font-family: "Satoshi-Black";
+  font-size: 1.875rem /* 30px */;
+  line-height: 2.25rem /* 36px */;
+}
+footer h2 {
+  font-size: 0.875rem /* 14px */;
+  line-height: 1.25rem /* 20px */;
+  font-family: "Satoshi-Bold";
+}
+/* footer h3 {
+  font-size: 1.25rem;
+  font-family: "Satoshi-Medium";
+  line-height: 1.75rem;
+} */
+footer p {
+  font-size: 0.875rem /* 14px */;
+  line-height: 1.25rem /* 20px */;
+}
+.contactInfo p:last-of-type {
+  word-break: break-all;
+}
+footer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* margin: 0 16px 0 16px; */
+}
+footer .left {
+  padding: 64px;
+  /* margin: 0 16px 0 16px; */
+}
+.socials a img {
+  width: 32px;
+  height: 32px;
+}
+.socials {
+  display: flex;
+  gap: 12px;
+}
+footer .left {
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.contactInfo {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+}
+footer .right {
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+.newsletter {
+  background-color: #1a1a1a;
+  color: #fff;
+  width: 100%;
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.mail {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.newsletter input {
+  outline-style: none;
+  padding: 12px 0 12px 0;
+  width: 100%;
+  border-bottom: 2px solid #fff;
+  background-color: transparent;
+  font-size: 0.875rem /* 14px */;
+  line-height: 1.25rem /* 20px */;
+}
+.mail .secondaryBtn {
+  font-size: 0.875rem /* 14px */;
+  line-height: 1.25rem /* 20px */;
+}
+.copyright {
+  display: flex;
+  flex-direction: column;
+  padding: 64px;
+  gap: 64px;
+}
+.companies {
+  display: flex;
+  gap: 16px;
+  height: 52px;
+}
+.companies img {
+  height: 100%;
+  max-width: 64px;
+}
+/* MEDIA QUERIES */
+@media (min-width: 1350px) {
+}
+@media (max-width: 1350px) {
+}
+@media (max-width: 1080px) {
+}
+@media (max-width: 1000px) {
+  footer h1 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+  .copyright {
+    gap: 48px;
+  }
+}
+@media (max-width: 700px) {
+  footer {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  footer .left,
+  .newsletter,
+  .copyright {
+    padding: 48px 24px 48px 24px;
+  }
+  .contactInfo {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 28px;
+  }
+}

@@ -1,0 +1,481 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Satoshi-Variable";
+  src: url("./assets/fonts/Satoshi-Variable.woff2") format("woff2"),
+    url("./assets/fonts/Satoshi-Variable.woff") format("woff"),
+    url("./assets/fonts/Satoshi-Variable.ttf") format("truetype");
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi-Medium";
+  src: url("./assets/fonts/Satoshi-Medium.woff2") format("woff2"),
+    url("../assets/fonts/Satoshi-Medium.woff") format("woff"),
+    url("../assets/fonts/Satoshi-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi-Regular";
+  src: url("./assets/fonts/Satoshi-Regular.woff2") format("woff2"),
+    url("./assets/fonts/Satoshi-Regular.woff") format("woff"),
+    url("./assets/fonts/Satoshi-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi-Bold";
+  src: url("./assets/fonts/Satoshi-Bold.woff2") format("woff2"),
+    url("./assets/fonts/Satoshi-Bold.woff") format("woff"),
+    url("./assets/fonts/Satoshi-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi-Black";
+  src: url("./assets/fonts/Satoshi-Black.woff2") format("woff2"),
+    url("./assets/fonts/Satoshi-Black.woff") format("woff"),
+    url("./assets/fonts/Satoshi-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+:root {
+  font-family: "Satoshi-Regular", system-ui, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  max-width: 1420px;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+
+  color: #1a1a1a;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @apply scroll-smooth;
+}
+.logo {
+  height: 30.07;
+  width: 200px;
+  object-fit: contain;
+}
+.main {
+  @apply flex flex-col gap-16;
+}
+nav {
+  @apply flex justify-between w-full py-6 ps-3 z-10 pr-6 fixed max-w-[1420px] text-base items-center;
+
+  font-family: "Satoshi-Medium";
+}
+nav.scrolled {
+  background-color: #1a1a1a;
+  @apply rounded-b-3xl;
+}
+
+.navLinks {
+  @apply flex gap-6 items-center justify-between;
+}
+.navLinks li a {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding-bottom: 8px;
+  position: relative;
+}
+.navLinks li a:hover,
+.navLinks li a.activeLink {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
+}
+.navLinks.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  padding-left: 36px;
+  padding-top: 92px;
+  padding-bottom: 52px;
+  width: 250px;
+  right: 0;
+  top: 0;
+  animation: slideLeft 300ms;
+  border-bottom-left-radius: 24px;
+}
+
+.navLinks.active li a,
+.contactNavBtn.active {
+  color: #1a1a1a;
+}
+.contactNavBtn.active {
+  border-color: #1a1a1a;
+}
+.contactNavBtn.active:hover {
+  background-color: #1a1a1a;
+  color: white;
+}
+button {
+  @apply py-3 px-6 rounded-full text-white ease-in duration-100;
+  font-family: "Satoshi-Medium";
+}
+.secondaryBtn {
+  border: 2px solid white;
+}
+.secondaryBtn:hover {
+  @apply bg-white text-[#000];
+}
+.ctaButton {
+  background-color: #1a1a1a;
+  width: min-content;
+  color: #fff;
+  white-space: nowrap;
+}
+.burger {
+  @apply w-12 h-12 hidden;
+}
+.closeIcon {
+  @apply w-12 h-12 pr-2 invert relative z-50;
+}
+
+.hero {
+  @apply flex flex-col h-[500px] relative items-center px-4;
+}
+.heroImage {
+  @apply absolute brightness-50 top-0 -z-10 rounded-b-3xl h-full w-full object-cover;
+}
+.heroTitle {
+  @apply flex flex-col mt-52 text-center gap-4;
+}
+.heroTitle h1 {
+  @apply text-4xl text-white;
+  font-family: "Satoshi-Bold";
+}
+.heroTitle h2 {
+  @apply text-xl text-white;
+  font-family: "Satoshi-Regular";
+}
+.search {
+  @apply p-8 rounded-3xl absolute -bottom-14 max-w-4xl flex gap-5 bg-[#D9D9D9] w-[90%];
+}
+.searchInput input {
+  @apply outline-none w-full rounded-full py-3 px-5;
+}
+.searchInput {
+  position: relative;
+  width: 100%;
+}
+.searchInput img {
+  @apply w-6 h-6 top-3 right-4 absolute;
+}
+.marketPlan {
+  padding-top: 64px;
+  @apply items-center mx-4 justify-center flex gap-16 flex-col;
+}
+.marketPlan img {
+  @apply w-14 h-14 mb-6;
+}
+.serviceItem {
+  @apply flex items-center flex-col gap-2 text-center;
+}
+.marketPlan h1 {
+  @apply text-3xl;
+  font-family: "Satoshi-Black";
+}
+.marketPlan h2 {
+  @apply text-xl;
+  font-family: "Satoshi-Bold";
+}
+.services {
+  @apply grid grid-cols-4 gap-4 max-w-6xl;
+}
+.marketPlan {
+  @apply self-center text-center;
+}
+.expertise {
+  @apply grid grid-cols-2 text-white;
+}
+.expertiseList {
+  background: rgba(211, 211, 211, 0.1);
+  @apply rounded-ss-3xl;
+}
+.expertise .black {
+  @apply bg-black ps-28 py-16 rounded-l-3xl;
+}
+.expertise .white {
+  @apply bg-[#D9D9D9] pr-28 py-16 rounded-r-3xl;
+}
+.card,
+.expertiseList {
+  @apply w-full h-[350px] object-cover;
+}
+.expertiseList {
+  @apply py-16 ps-20 pr-10 flex-col flex gap-10;
+}
+.expertise h1,
+.process h1 {
+  @apply text-3xl;
+  font-family: "Satoshi-Black";
+}
+.expertise ul li {
+  @apply text-lg list-disc ms-4;
+  font-family: "Satoshi-Regular";
+  line-height: 36px;
+}
+
+#image1 {
+  @apply rounded-se-3xl text-xl bg-center bg-[url('./assets/images/image-1.webp')];
+}
+#image2 {
+  @apply rounded-es-3xl bg-center bg-[url('./assets/images/image-2.webp')];
+}
+#image3 {
+  @apply rounded-ee-3xl bg-center bg-[url('./assets/images/image-3.webp')];
+}
+.card {
+  @apply flex items-center justify-center;
+}
+.card .label img {
+  @apply h-20 w-20;
+}
+.card .label {
+  @apply flex flex-col gap-4 items-center;
+}
+.process:first-of-type {
+  @apply mb-8;
+}
+
+.process {
+  @apply grid grid-cols-8 px-8 items-center gap-16 h-fit m-auto max-w-[1320px];
+}
+.process img {
+  @apply w-full h-full col-span-5 object-cover;
+}
+.process .steps {
+  @apply w-full col-span-3 py-10;
+}
+#image4,
+#image5 {
+  @apply rounded-3xl;
+}
+
+.step {
+  @apply flex items-center gap-5;
+}
+.process p {
+  @apply text-lg;
+  font-family: "Satoshi-Medium";
+}
+.step .number {
+  @apply py-2 px-5 rounded-full text-lg w-fit bg-[#F8F8F8];
+  border: 2px solid #1a1a1a;
+  font-family: "Satoshi-Medium";
+}
+.steps {
+  @apply flex flex-col gap-5;
+}
+.process h1 {
+  @apply mb-11;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 1350px) {
+  .navLinks.active {
+    @apply items-start;
+  }
+  .hamburgerIcon.inactive {
+    @apply hidden;
+  }
+}
+
+@media (max-width: 1350px) {
+  .navLinks,
+  .contact {
+    @apply text-sm;
+    @apply hidden items-start;
+  }
+  .burger {
+    @apply block;
+  }
+  .secondaryBtn {
+    @apply text-sm;
+  }
+  .navLinks li a {
+    padding-bottom: 0px;
+  }
+  .logo {
+    width: 170px;
+    height: 25.56px;
+  }
+  .heroTitle h1 {
+    @apply text-3xl;
+  }
+  .heroTitle h2 {
+    @apply text-lg;
+  }
+  nav {
+    @apply py-0;
+  }
+  .expertise .black {
+    @apply ps-10;
+  }
+  .expertise .white {
+    @apply pr-10;
+  }
+  .process h1 {
+    @apply mb-4;
+  }
+}
+@media (max-width: 1080px) {
+  .expertise {
+    @apply grid-cols-1 gap-8;
+  }
+  .expertise .black {
+    @apply ms-20;
+  }
+  .expertise .white {
+    @apply mr-20;
+  }
+}
+@media (max-width: 1000px) {
+  .marketPlan h2 {
+    @apply text-base;
+  }
+  .marketPlan p {
+    @apply text-sm;
+  }
+  .serviceItem img {
+    @apply mb-2 h-12 w-12;
+  }
+  .process {
+    @apply grid-cols-5 gap-8 px-10;
+  }
+  .process img {
+    @apply rounded-3xl col-span-2;
+  }
+  .process:last-of-type img {
+    @apply order-first;
+  }
+  .process .steps {
+    @apply py-0 col-span-3;
+  }
+}
+@media (max-width: 700px) {
+  .services {
+    @apply grid-cols-2 max-w-lg gap-4 mx-4;
+  }
+  .marketPlan {
+    @apply gap-10;
+  }
+  .marketPlan h1,
+  .cta h1,
+  .exposure h1,
+  .partners h1,
+  .history h1,
+  .tablet h1 {
+    @apply text-xl;
+  }
+
+  .cta p,
+  .exposure p,
+  .partners p,
+  .history p,
+  .tablet p {
+    @apply text-sm;
+  }
+
+  .heroTitle h1 {
+    @apply text-2xl;
+  }
+  .heroTitle h2 {
+    @apply text-base;
+  }
+  .ctaButton,
+  .searchInput input {
+    @apply text-sm;
+  }
+  .searchInput img {
+    @apply top-2.5;
+  }
+  .search {
+    @apply flex-col p-4 gap-4 items-center;
+  }
+  nav {
+    @apply px-0;
+  }
+  .expertise .black {
+    @apply ms-4 py-10;
+  }
+  .expertise .white {
+    @apply mr-4 py-10;
+  }
+
+  .process h1 {
+    @apply text-xl;
+  }
+  .expertise h1 {
+    @apply text-lg;
+  }
+  .process {
+    @apply grid-cols-1;
+  }
+  .expertise ul li {
+    @apply text-base;
+  }
+  .expertise ul {
+    @apply gap-2 flex flex-col;
+  }
+  .card {
+    @apply h-[250px];
+  }
+  .expertiseList {
+    @apply h-fit ps-12 gap-8;
+  }
+  .expertiseList ul li {
+    @apply text-base;
+  }
+  .process p {
+    @apply text-base;
+  }
+  .step .number {
+    @apply text-base;
+  }
+  .steps {
+    @apply gap-3;
+  }
+  .process {
+    @apply px-4 gap-0;
+  }
+  .steps h1 {
+    @apply mt-8;
+  }
+  .process:first-of-type {
+    @apply mb-8;
+  }
+  .main {
+    @apply gap-8;
+  }
+}
+
+/*ANIMATIONS */
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

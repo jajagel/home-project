@@ -1,0 +1,75 @@
+.bar {
+  height: 12px;
+  width: 80px;
+  background-color: #d9d9d9;
+  border-radius: 12px;
+}
+.bar.active {
+  background-color: #525252;
+}
+.indicators {
+  display: flex;
+  gap: 8px;
+}
+.history button img {
+  height: 24px;
+  width: 24px;
+}
+.history button {
+  padding: 8px 16px 8px 16px;
+  border-radius: 50px;
+  border: 2px solid #1a1a1a;
+}
+.history h1 {
+  font-family: "Satoshi-Black";
+  font-size: 1.875rem /* 30px */;
+  line-height: 2.25rem /* 36px */;
+}
+.history img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+.history {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 64px;
+  padding: 64px;
+  background-color: #f8f8f8;
+  border-radius: 24px;
+  margin: 0 16px 0 16px;
+}
+.history .right {
+  height: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-content: space-between;
+}
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+/* MEDIA QUERIES */
+
+@media (max-width: 1000px) {
+  .history {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 36px;
+    padding: 36px 16px 36px 16px;
+  }
+  .carousel {
+    position: relative;
+    padding-top: 20px;
+  }
+}

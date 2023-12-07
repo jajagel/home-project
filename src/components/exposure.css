@@ -1,0 +1,81 @@
+.exposure {
+  padding: 64px;
+  background-color: #f8f8f8;
+  border-radius: 24px;
+  text-align: center;
+  align-items: center;
+  margin: 0 16px 0 16px;
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+}
+.exposure h1 {
+  font-family: "Satoshi-Black";
+  font-size: 1.875rem /* 30px */;
+  line-height: 2.25rem /* 36px */;
+}
+.exposure h2 {
+  font-size: 1.5rem /* 24px */;
+  line-height: 2rem /* 32px */;
+  font-family: "Satoshi-Bold";
+  margin-bottom: 24px;
+}
+.exposure h3 {
+  font-size: 1.25rem /* 20px */;
+  font-family: "Satoshi-Medium";
+  line-height: 1.75rem /* 28px */;
+}
+.exposure p {
+  font-size: 1rem /* 16px */;
+  line-height: 1.5rem /* 24px */;
+  max-width: 900px;
+}
+.exposureList {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  margin: 0 16px 0 16px;
+}
+.exposureList .card {
+  border: 2px solid #1a1a1a;
+  background-color: #fff;
+  border-radius: 24px;
+  text-align: center;
+  display: block;
+  padding: 40px;
+  height: 100%;
+}
+.exposureList .card p {
+  text-align: left;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 1350px) {
+}
+@media (max-width: 1350px) {
+}
+@media (max-width: 1080px) {
+}
+@media (max-width: 1000px) {
+  .exposureList {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+  }
+  .exposure {
+    padding: 64px 16px 64px 16px;
+  }
+  .exposure h2 {
+    font-size: 1.25rem /* 20px */;
+    line-height: 1.75rem /* 28px */;
+  }
+  .exposure h3 {
+    font-size: 1rem /* 16px */;
+    line-height: 1.5rem /* 24px */;
+  }
+}
+@media (max-width: 700px) {
+  .exposure h2 {
+    margin-bottom: 1rem; /* 16px */
+  }
+}
